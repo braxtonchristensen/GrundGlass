@@ -1,0 +1,29 @@
+ <main-header></main-header>
+ <div id="store-wrap">	
+	<main>
+		<div class=" width80 flex-column align-items-center">
+		<div class="width100">	
+			<div class="flex-column align-items-center container">
+				<br />
+				<cart></cart>
+				<h4 class="center">All Items</h4>
+				  <div class="row">
+				  	<form class="col s12">
+				      <div class="row">
+				      	<div class="input-field col s6">
+				  		<input ng-model="search" id="search" type="text" class="validate">
+          				<label for="search">Search</label>
+          				</div>
+          			  </div>
+				  	</form>
+				  </div>
+				<div class="flex-row wrap space-between">
+					<div class="item black-text" ng-repeat="product in products | filter:search">
+						<product class="item"></product>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		

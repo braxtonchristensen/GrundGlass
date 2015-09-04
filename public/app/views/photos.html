@@ -1,0 +1,89 @@
+<header class="header flex-row"> 
+	<div class="item"><a href="/logout"><p>logout</p></a></div>
+	<div class="item"><a href="#/admin/orders"><p>orders</p></a> </div>
+	<div class="item"><a href="#/admin/products"><p>products</p></a> </div>
+</header>
+<main class="width80">
+	<h2 class="indent">Photos list</h2>
+	<div class="width50"><input type="text" ng-model="filter" placeholder="look up"/></div>
+
+	<div class="flex-row wrap content-center">
+		<div ng-repeat="photo in photos | filter: filter">
+			<div>
+				<img ng-click="photo.show=!photo.show" pop-up class="image-thumbnail" ng-src="{{photo.imageUrl}}"/>
+				<div class="white-text indent" ng-show="photo.show">
+					<p>id:</p><input class="black-text" readonly="true" ng-model="photo._id"></input>
+					<br />
+					<br />
+					<p>title:</p><input  type="text" ng-model="photo.title"/>
+					<p>description:</p><input  type="text" ng-model="photo.description"></input>
+					<br />
+					<br />
+					<p>category:</p><input  type="text" ng-model="photo.category"></input> 
+					<br />
+					<br />
+					<p>auth:</p><input  type="text" ng-model="photo.auth"></input> 
+					<button class="black-text" ng-click="updatePhoto(photo._id, photo.title, photo.description, photo.category, photo.auth)">update</button>
+					<button class="black-text" ng-click="removePhoto(photo._id)">delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br/>
+	<br/>
+
+	
+	<div class="width50">
+		<h4> new photo </h4>
+		<input type="text" ng-model="photoTitle" placeholder="title"></input>
+
+		<div class="flex-row">
+			<form enctype="multipart/form-data">
+	        	<input type="file" ng-file-select="onFileSelect($files)" required/>
+	   		</form>
+	   		<b>Preview:</b><br />
+	   		<img ng-show="imageSrc" class="image-small" ng-src="{{imageSrc}}" /><br/>
+	   	</div>
+
+		<!-- <input type="text" ng-model="imageUrl" placeholder="image url"/> -->
+		<input type="text" ng-model="photoDescription"  placeholder="decription: max 100 char"></input>
+		<input type="text" ng-model="photoCategory" placeholder="type"></input>
+		<input type="text" ng-model="photoAuth" placeholder="auth (i.e. store, excursion)" required></input>
+		<!-- <button ng-click="addPhoto(imageSrc, file)">submit</button> -->
+		<button ng-click="addPhoto(imageSrc, file, photoTitle, photoDescription, photoCategory, photoAuth)">submit</button>
+	</div>
+
+	<br />
+	<br />
+	<div class="width50">
+		<h4> create account </h4>
+		<input input-date
+			    type="text"
+			    placeholder="excursion date"
+			    name="created"
+			    id="inputCreated"
+			    ng-model="date"
+			    container="body"
+			    format="mm/dd/yyyy"
+			    months-full="{{ month }}"
+			    months-short="{{ monthShort }}"
+			    weekdays-full="{{ weekdaysFull }}"
+			    weekdays-short="{{ weekdaysShort }}"
+			    weekdays-letter="{{ weekdaysLetter }}"
+			    today="today"
+			    clear="clear"
+			    close="close"
+			    select-years="15"
+			    on-start="onStart()"
+			    on-render="onRender()"
+			    on-open="onOpen()"
+			    on-close="onClose()"
+			    on-set="onSet()"
+			    on-stop="onStop()" />
+		<input type="password" ng-model="password" placeholder="password"/>
+		<button ng-click="createAccount(date, password)">create</button>
+	</div>
+	<br />
+	
+</main>

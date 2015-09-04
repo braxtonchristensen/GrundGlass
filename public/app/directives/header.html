@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  (function($){
+    $(function(){
+      $('.button-collapse').sideNav();
+      $('.parallax').parallax();
+      });
+  })(jQuery);
+</script>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/#/home" class="brand-logo">GrundeGlass</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/contact">Contact</a></li>
+        <li><a href="#/store">Store</a></li>
+        <li id="cart">
+          <a href="" ng-hide="!cart.length" ng-click="showCart()"><i class="material-icons">shopping_cart</i></a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/contact">Contact</a></li>
+        <li><a href="#/store">Store</a></li>
+        <li id="cart">
+        	<a href="" ng-click="showCart()"><i class="material-icons">shopping_cart</i></a>
+        </li>
+        <li>somestuff</li>
+      </ul>
+      <a data-activates="nav-mobile" class="button-collapse"><i class="material-icons red-text text-darken-4">menu</i></a>
+    </div>
+  </nav>
+
