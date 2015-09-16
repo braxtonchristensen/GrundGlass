@@ -33,6 +33,16 @@ h5{
   align-self: center;
 }
 
+.wrap {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
 .carousel_img {
   max-width: 600px;
   max-height: 400px;
