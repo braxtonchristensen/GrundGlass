@@ -32,7 +32,7 @@ var PaymentCtrl = require('./controllers/PayCtrl'),
 	
 
 //stripe
-require('./config_copy/stripe');
+var stripe = require("stripe")("sk_test_MieJ5iWNroUQPiY6Eq0EO97c");
 
 //passport
 require('./config_copy/passport')(passport); // pass passport for configuration

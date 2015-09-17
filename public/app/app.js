@@ -87,7 +87,7 @@ app.config(function($routeProvider){
 			cart: function(cartService){
 				return cartService.getCart().then(function(response){
 					console.log(response, 232323);
-					console.log(response.data, 44444);
+					console.log(response.data[0].total, 44444);
 					return response.data;
 				});
 			}

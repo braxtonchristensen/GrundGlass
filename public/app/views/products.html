@@ -1,4 +1,4 @@
-<header class="header flex-row black blue-text"> 
+<header class="header flex-row grey lighten-2"> 
 	<div class="item"><a href="/logout"><p>logout</p></a></div>
 	<div class="item"><a href="#/admin/orders"><p>orders</p></a> </div>
 	<div class="item"><a href="#/admin/photos"><p>photos</p></a> </div>
@@ -20,10 +20,10 @@
 					<p class="black-text">id:</p><input class="black-text" readonly="true" ng-model="product._id"/>
 					<br />
 					<br />
-					<p class="black-text">title:</p><input class="black-text" type="text" ng-model="product.title"></input>
-					<p class="black-text">description:</p><input class="black-text" type="text" ng-model="product.description"></input>
-					<p class="black-text">price:</p><input class="black-text" id="number" type="number" ng-model="product.price"></input>
-					<p class="black-text">category:</p><select class="black-text" ng-model="product.category" ng-options="option for option in categoryOptions"></select>
+					<p class="white-text">title:</p><input class="white-text" type="text" ng-model="product.title"></input>
+					<p class="white-text">description:</p><input class="white-text" type="text" ng-model="product.description"></input>
+					<p class="white-text">price:</p><input class="white-text" id="number" type="number" ng-model="product.price"></input>
+					<p class="white-text">category:</p><select class="black-text" ng-model="product.category" ng-options="option for option in categoryOptions"></select>
 					<br />
 					<button class="black-text" ng-click="updateProduct(product._id, product.title, product.description, product.price, product.category)">update</button>
 					<button class="black-text" ng-click="removeProduct(product._id)">delete</button>

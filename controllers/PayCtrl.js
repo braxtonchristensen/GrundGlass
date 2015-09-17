@@ -1,10 +1,7 @@
 var EmailCtrl = require('../controllers/EmailCtrl.js'),
 	Order = require('../models/OrderModel.js');
 
-var stripe = require("stripe")(
-  process.env.STRIPE
-);
-
+var stripe = require("stripe")("sk_test_MieJ5iWNroUQPiY6Eq0EO97c");
 module.exports.submitStripe = function(req, res){
 	console.log(11111, req.body)
 	req.session.cart = [];

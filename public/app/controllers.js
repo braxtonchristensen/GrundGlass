@@ -109,7 +109,7 @@ app.controller('adminCtrl', function($scope, adminService, customerService, cart
 	$scope.updateProduct = function(id, title, description, price, category){
 		if(confirm("Are you sure you want to update this products info?")){
 			adminService.updateProduct(id, title, description, price, category).then(function(response){
-				alert('This product has been updated.');
+				Materialize.toast("product updated.", 1000);
 				$scope.getProducts();
 			});
 		}
@@ -608,6 +608,7 @@ app.controller('checkoutCtrl', function($scope, $location, customerService, cart
 		$scope.placeOrder(customer, address, products);
 	};
 });
+
 
 
 

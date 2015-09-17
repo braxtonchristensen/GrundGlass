@@ -12,7 +12,7 @@ var mandrill = require('mandrill-api/mandrill'),
 		"from_email": data.from_email,
 		"from_name": data.from_name,
 		"to": data.to
-	}
+	};
 	var async = false;
 	var ip_pool = "Main Pool";
 	var send_at = "example send_at";
@@ -29,6 +29,6 @@ var mandrill = require('mandrill-api/mandrill'),
 			console.log(e);
 			deferred.reject(new Error(e));
 		}
-	)
+	);
 	return deferred.promise;
 };

@@ -10,20 +10,20 @@ app.directive("ngFileSelect",function(){
       
         $scope.file = (e.srcElement || e.target).files[0];
         $scope.getFile();
-      })
+      });
       
     }
     
-  }
-})
+  };
+});
 
 
 app.directive('mainHeader', function(){
 	return {
 		restrict: 'E',
 		templateUrl: 'app/directives/header.html'
-	}
-})
+	};
+});
 
 
 app.directive('product', function(){
@@ -37,19 +37,19 @@ app.directive('product', function(){
 				element.find('i').show();
 				for(var i = 0; i < scope.cart.length; i++){
 					if(scope.product._id === scope.cart[i].item.id){
-						element.find('i').hide()
+						element.find('i').hide();
 						element.find('.itemInCart').show();
 					}
 				}
 				var x = element.find('i');
 				$(x).on('click', function(){
-					$(this).hide()
+					$(this).hide();
 					element.find('.itemInCart').show();
 				});
-			})
+			});
 		}
-	}
-})
+	};
+});
 
 
 app.directive('item', function(){
@@ -59,15 +59,15 @@ app.directive('item', function(){
 		link: function(scope, element, attrs){
 
 		}
-	}
-})
+	};
+});
 
 app.directive('photo', function(){
 	return {
 		restrict: 'E',
 		templateUrl: 'app/directives/buildImage.html'
-	}
-})
+	};
+});
 
 app.directive('popUp', function(){
 	return {
@@ -75,14 +75,14 @@ app.directive('popUp', function(){
 		link: function(scope, element, attrs){
 
 			element.on('click', function(){
-				var elem = $(this).parent()
-				var popUpItem = elem.find('img')
+				var elem = $(this).parent();
+				var popUpItem = elem.find('img');
 					popUpItem
 						.toggleClass('pop-up')
 						.parent()
-							.toggleClass('pop-up-back')	
+							.toggleClass('pop-up-back');	
 				if(popUpItem.siblings()){
-					popUpItem.siblings().toggle()
+					popUpItem.siblings().toggle();
 				}
 							// .toggleClass('align-items-center')
 							// .toggleClass('content-center')
@@ -90,8 +90,8 @@ app.directive('popUp', function(){
 			});
 
 		}
-	}
-})
+	};
+});
 
 
 
