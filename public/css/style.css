@@ -1,15 +1,32 @@
 /* Custom Stylesheet */
+* {
+  /*box-sizing: border-box;*/
+  padding: 0;
+  margin:0;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  font-family: "helvetica neue" ,"Alegreya Sans SC";
+  font-weight: 100;
+  
+}
+
 html, body {
   width: 100%;
   margin: 0;
   font-family: "helvetica neue", helvetica, tahoma;
   font-weight: 100
 }
+
 a{
   color: black;
 }
 a:hover{
   color: rgba(0,0,0,.7);
+  cursor: pointer;
+}
+i:hover {
+  cursor: pointer;
 }
 
 h1{
@@ -34,10 +51,15 @@ h5{
   display: block;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 100%;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 
+}
+
+.block{
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
 }
 
 .center {
@@ -57,11 +79,7 @@ h5{
 #carousel {
   height: 600px;
   width: 100%;
-  background-color: rgba(0,0,0,0.1);
-  background-size: cover;
-  -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+  background-color: rgba(0,0,0,0.0);
 }
 .carousel {
   height: 100%;
@@ -82,6 +100,14 @@ h5{
   width: 100%;
   margin: auto;
   font-size: 14px;
+}
+
+.image {
+  position: relative;
+}
+
+.image img {
+  border-radius: 4px;
 }
 
 .image-cart {
@@ -168,12 +194,12 @@ cart {
 
 .width80 {
   width: 80%;
-  margin: auto;
+
 }
 
 .width100 {
   width: 100%;
-  margin: auto;
+
 }
 
 .flex-row {
@@ -227,6 +253,7 @@ p {
   color: rgba(255,255,255,.9);
 }
   .parallax-container .section {
+    margin-bottom: 20px;
     width: 100%;
   }
 

@@ -1,8 +1,8 @@
  <main-header></main-header>
  <div id="store-wrap">	
 	<main>
-		<div class=" width80 flex-column align-items-center">
-		<div class="width100">	
+		<div class=" width100 flex-column align-items-center">
+		<div class="width100 center">	
 			<div class="flex-column align-items-center container">
 				<br />
 				<cart></cart>
@@ -10,7 +10,7 @@
 				  <div class="row">
 				  	<form class="col s12">
 				      <div class="row">
-				      	<div class="input-field col s6">
+				      	<div class="input-field col s12">
 				  		<input ng-model="search" id="search" type="text" class="validate">
           				<label for="search">Search</label>
           				</div>
@@ -26,4 +26,9 @@
 		</div>
 		<br />
 		<br />
+		</div>
+		<button class="block item black-text button" ng-hide="!cart.length" ng-click="showCart()">view cart</button>
+		<button class="block item black-text button" ng-hide="!cart.length" ng-click="checkout()">place order</button>
+	</main>
+</div>	
 		
