@@ -18,7 +18,7 @@
 				  	</form>
 				  </div>
 				<div class="flex-row wrap space-between">
-					<div class="item black-text" ng-repeat="product in products | filter:search">
+					<div class="item black-text wow fadeInLeft" ng-repeat="product in products | filter:search">
 						<product class="item"></product>
 					</div>
 				</div>
@@ -27,7 +27,7 @@
 		<br />
 		<br />
 		</div>
-		<button class="block item black-text button" ng-hide="!cart.length" ng-click="showCart()">view cart</button>
+		<a class="indent" ng-hide="!cart.length" ng-click="showCart()">{{cart.length}}<i class="material-icons">shopping_cart</i></a>
 		<button class="block item black-text button" ng-hide="!cart.length" ng-click="checkout()">place order</button>
 	</main>
 </div>	

@@ -12,15 +12,35 @@
 
 <!-- hide while working with materialize -->
 <div id="product" class="image hide-on-med-and-down flex-column align-items-center">
-	<img pop-up class="image-small" ng-src="{{product.image}}"/>
+	<div>
+		<img ng-click="photo.show=!photo.show" pop-up class="image-thumbnail" ng-src="{{product.image}}"/>
+		<span class="white-text indent" ng-show="photo.show">
+			<p>title: {{product.title}}</p>
+			<p>description: {{product.description}}</p>
+			<p>price: ${{product.price}}</p>
+			<p>category: {{product.category}}</p>
+			<br />
+			<div class="center"><i ng-click="addToCart(product)" class="material-icons">add_shopping_cart</i>
+			<p class="itemInCart red-text center"><a href=""><i ng-click="removeItem(item, item.item.id)" class="tiny material-icons red-text text-darken-4">close</i></a>item in cart</p>
+			</div>
+		</span>
+	</div>
 	<div class="center"><p>{{product.title}}</p></div>
-	<div class="center"><p>{{product.description}}</p></div>
 	<div class="center"><p class="price">${{product.price}}</p></div>
 	<div class="center"><i ng-click="addToCart(product)" class="material-icons">add_shopping_cart</i>
-	<p class="itemInCart red-text center">item in cart</p></div>
+	<p class="itemInCart red-text center"><a href=""><i ng-click="removeItem(item, item.item.id)" class="tiny material-icons red-text text-darken-4">close</i></a> item in cart</p></div>
 </div>
 <div id="product" class="image hide-on-large-only hide-on-small-only flex-column align-items-center">
-	<img pop-up class="image-small" ng-src="{{product.image}}"/>
+	<div>
+		<img ng-click="photo.show=!photo.show" pop-up class="image-thumbnail" ng-src="{{product.image}}"/>
+		<span class="white-text indent" ng-show="photo.show">
+			<p>title: {{product.title}}</p>
+			<p>description: {{product.description}}</p>
+			<p>price: ${{product.price}}</p>
+			<p>category: {{product.category}}</p>
+			<br />
+		</span>
+	</div>
 	<div class="center"><p>{{product.title}}</p></div>
 	<div class="center"><p>{{product.description}}</p></div>
 	<div class="center"><p class="price">${{product.price}}</p></div>
@@ -28,7 +48,16 @@
 	<p class="itemInCart red-text center">item in cart</p></div>
 </div>
 <div id="product" class="image hide-on-med-and-up flex-column align-items-center">
-	<img pop-up class="image-cart" ng-src="{{product.image}}"/>
+	<div>
+		<img ng-click="photo.show=!photo.show" pop-up class="image-thumbnail" ng-src="{{product.image}}"/>
+		<span class="white-text indent" ng-show="photo.show">
+			<p>title: {{product.title}}</p>
+			<p>description: {{product.description}}</p>
+			<p>price: ${{product.price}}</p>
+			<p>category: {{product.category}}</p>
+			<br />
+		</span>
+	</div>
 	<div class="center"><p>{{product.title}}</p></div>
 	<div class="center"><p>{{product.description}}</p></div>
 	<div class="center"><p class="price">${{product.price}}</p></div>

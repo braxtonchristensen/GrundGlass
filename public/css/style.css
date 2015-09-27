@@ -6,7 +6,7 @@
   text-decoration: none;
   list-style: none;
   color: inherit;
-  font-family: "helvetica neue" ,"Alegreya Sans SC";
+  font-family: "helvetica neue", "Roboto Condensed", "Alegreya Sans SC";
   font-weight: 100;
   
 }
@@ -14,7 +14,7 @@
 html, body {
   width: 100%;
   margin: 0;
-  font-family: "helvetica neue", helvetica, tahoma;
+  font-family: "helvetica neue", "Roboto Condensed", "Alegreya Sans SC", helvetica, tahoma;
   font-weight: 100
 }
 
@@ -30,16 +30,20 @@ i:hover {
 }
 
 h1{
-  font-family: "helvetica neue", helvetica, tahoma;
+  font-family: "helvetica neue", "Roboto Condensed", "Alegreya Sans SC", helvetica, tahoma;
   font-weight: 100;
 }
 h4{
-  font-family: "helvetica neue", helvetica, tahoma;
+  font-family: "helvetica neue", "Roboto Condensed", "Alegreya Sans SC", helvetica, tahoma;
   font-weight: 100;
 }
 h5{
-  font-family: "helvetica neue", helvetica, tahoma;
+  font-family: "helvetica neue", "Roboto Condensed", "Alegreya Sans SC", helvetica, tahoma;
   font-weight: 100;
+}
+
+.indent {
+  padding-left: 40px;
 }
 
 .align-items-center {

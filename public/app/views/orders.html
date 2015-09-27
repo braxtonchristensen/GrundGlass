@@ -18,7 +18,7 @@
 		<select class="col s2 browser-default" ng-model="search.payment.status" ng-options="option for option in paymentStatusOptions"><option class="gray-text" value="" disabled selected>payment status</option></select> 
 	</div>
 
-	<div ng-repeat="order in orders | filter:search:strict">
+	<div class="indent" ng-repeat="order in orders | filter:search:strict">
 		<div>id: <a class="black-text darken-2" href="" ng-click="showOrder(order)">{{order._id}}</a></div>
 		<div ng-show="order.show">
 			<div class="container">

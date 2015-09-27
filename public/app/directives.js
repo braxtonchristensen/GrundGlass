@@ -101,8 +101,8 @@ app.directive('storeLogin', function(){
 		templateUrl: 'app/directives/store-login.html',
 		controller: function($scope, $location, customerService){
 		}
-	}
-})
+	};
+});
 
 app.directive('cart', function(){
 	return {
@@ -117,43 +117,43 @@ app.directive('cart', function(){
 						total += scope.cart[i].total;
 						scope.total = total.toFixed(2);
 					}
-				})
+				});
 			}
 		},
 		controller: function($scope, cartService, $location, customerService){
 
 
 			$scope.updateItem = function(item, id, quantity){
-				console.log(22222222, item, id, quantity)
+				console.log(22222222, item, id, quantity);
 				var data = {
 					id: id,
 					quantity: quantity
-				}
+				};
 				cartService.updateItem(data).then(function(response){
-					$scope.cart = response.data
-				})
-			}
+					$scope.cart = response.data;
+				});
+			};
 
 			$scope.removeItem = function(item, id){
-				console.log(3333333, item,444444, id)
+				console.log(3333333, item,444444, id);
 				cartService.removeItem(id).then(function(response){
-					$scope.cart = response.data
-				})
-			}
+					$scope.cart = response.data;
+				});
+			};
 
 			$scope.checkout = function(){
 				$location.path('/checkout/');
-			}
+			};
 
 			$scope.showCart = function(){
 				$scope.show = !$scope.show;
-			}
+			};
 			$scope.backToStore = function(){
 				$scope.show = !$scope.show;
-				$location.path('/store/')
-			}
+				$location.path('/store/');
+			};
 		}
-	}
-})
+	};
+});
 
 
