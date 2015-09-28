@@ -4,7 +4,7 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	session = require('express-session'),
-	port = 1337,
+	port = 80,
 	passport = require('passport'),
 	flash = require('connect-flash'),
 	morgan = require('morgan'),
@@ -12,7 +12,7 @@ var express = require('express'),
 	fs = require('fs'),
 	multer = require('multer'),
 	cookieParser = require('cookie-parser'),
-	mongoUri = 'mongodb://localhost:27017/grundeglass',
+	mongoUri = 'mongodb://grundeglass:gh95qm3b@ds051953.mongolab.com:51953/grundeglass',
 	dotenv = require('dotenv').load();
 
 	// mongoUri = process.env.MONGOLAB_URI;
