@@ -1,2 +1,2 @@
 //stripe
-var stripe = require("stripe")(process.env.STRIPE);
+var stripe = require("stripe")(STRIPE);

@@ -5,7 +5,7 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	session = require('express-session'),
 	dotenv = require('dotenv').load();
-	port = process.env.PORT,
+	port = PORT,
 	passport = require('passport'),
 	flash = require('connect-flash'),
 	morgan = require('morgan'),
@@ -13,7 +13,7 @@ var express = require('express'),
 	fs = require('fs'),
 	multer = require('multer'),
 	cookieParser = require('cookie-parser'),
-	mongoUri = process.env.MONGOLAB_URI;
+	mongoUri = MONGOLAB_URI;
 
 
 
@@ -55,9 +55,9 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./admin/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 //Amazon s3
-AWS.config.accessKeyId = process.env.AWS_ACCESS_KEY;
-AWS.config.secretAccessKey = process.env.AWS_SECRET;
-AWS.config.region = process.env.AWS_REGION;
+AWS.config.accessKeyId = AWS_ACCESS_KEY;
+AWS.config.secretAccessKey = AWS_SECRET;
+AWS.config.region = AWS_REGION;
 
 
 
@@ -196,7 +196,7 @@ app.post('/api/email/send', EmailCtrl.sendEmail);
 	
 
 
-app.listen(process.env.PORT||5000, function(){
+app.listen(PORT||5000, function(){
 	console.log('listening on ' + port);
 });
 
