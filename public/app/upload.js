@@ -40,7 +40,7 @@
             var deferred = $q.defer();
              
             var reader = getReader(deferred, scope);         
-            reader.readAsText(file);
+            reader.readAsDataURL(file);
              
             return deferred.promise;
         };

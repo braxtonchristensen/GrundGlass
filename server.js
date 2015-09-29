@@ -16,7 +16,7 @@ var express = require('express'),
 	mongoUri = process.env.MONGOLAB_URI;
 
 
-
+var herokuURL = 'https://grundeglass.herokuapp.com';
 //controllers
 var PaymentCtrl = require('./controllers/PayCtrl'),
 	ProductCtrl = require('./controllers/ProductCtrl'),
@@ -74,7 +74,7 @@ function uploadToS3(buf, file, callback) {
         }, callback);
 }
 
-app.post('/upload', function (req, res){
+app.post(herokuURL+'/upload', function (req, res){
     console.log(1111, req.body);
     var buf = new Buffer(req.body.image.replace(/^data:image\/\w+;base64,/, ""), 'base64');
     var file = req.body.file;
