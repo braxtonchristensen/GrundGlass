@@ -56,7 +56,11 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./admin/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 //Amazon s3
-AWS.config.loadFromPath('./config_copy/aws-config.json');
+AWS.config.accessKeyId = process.env.AWS_ACCESS_KEY;
+AWS.config.secretAccessKey = process.env.AWS_SECRET;
+AWS.config.region = process.env.AWS_REGION;
+
+
 
 var photoBucket = new AWS.S3({params: {Bucket: 'grundglass'}});
 
