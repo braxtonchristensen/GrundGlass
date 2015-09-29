@@ -1,6 +1,6 @@
 var app = angular.module('ecommerce');
 
-var herokuURL = 'grundeglass.herokuapp.com';
+var herokuURL = 'https://grundeglass.herokuapp.com';
 // var herokuURL = 'http://localhost:1337'
 
 app.service('instagramService', function($http, $q){
