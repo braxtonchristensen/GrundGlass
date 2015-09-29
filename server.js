@@ -30,7 +30,7 @@ var PaymentCtrl = require('./controllers/PayCtrl'),
 	
 
 //stripe
-var stripe = require("stripe")(process.env.STRIPE);
+require('./config_copy/stripe');
 
 //passport
 require('./config_copy/passport')(passport); // pass passport for configuration
@@ -56,11 +56,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./admin/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 //Amazon s3
-AWS.config.accessKeyId = process.env.AWS_ACCESS_KEY;
-AWS.config.secretAccessKey = process.env.AWS_SECRET;
-AWS.config.region = process.env.AWS_REGION;
-
-
+AWS.config.loadFromPath('./config_copy/aws-config.json');
 
 var photoBucket = new AWS.S3({params: {Bucket: 'grundglass'}});
 

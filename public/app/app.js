@@ -1,5 +1,5 @@
 
-var app = angular.module('ecommerce', ['ngRoute', 'angular-carousel', 'ui.materialize']);
+var app = angular.module('ecommerce', ['ngRoute', 'angular-carousel']);
 // var app = angular.module('ecommerce', ['ngRoute'])
 
 app.config(function($routeProvider){
