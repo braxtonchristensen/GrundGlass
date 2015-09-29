@@ -32,5 +32,14 @@
     "passport-local": "^1.0.0",
     "q": "^1.4.1",
     "stripe": "^3.5.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braxtonchristensen/GrundGlass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/braxtonchristensen/GrundGlass/issues"
+  },
+  "homepage": "https://github.com/braxtonchristensen/GrundGlass#readme"
 }

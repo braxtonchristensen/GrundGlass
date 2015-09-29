@@ -4,7 +4,8 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	session = require('express-session'),
-	port = 80,
+	dotenv = require('dotenv').load();
+	port = process.env.PORT,
 	passport = require('passport'),
 	flash = require('connect-flash'),
 	morgan = require('morgan'),
@@ -12,10 +13,7 @@ var express = require('express'),
 	fs = require('fs'),
 	multer = require('multer'),
 	cookieParser = require('cookie-parser'),
-	mongoUri = 'mongodb://grundeglass:gh95qm3b@ds051953.mongolab.com:51953/grundeglass',
-	dotenv = require('dotenv').load();
-
-	// mongoUri = process.env.MONGOLAB_URI;
+	mongoUri = process.env.MONGOLAB_URI;
 
 
 
@@ -32,7 +30,7 @@ var PaymentCtrl = require('./controllers/PayCtrl'),
 	
 
 //stripe
-var stripe = require("stripe")("sk_test_RPm6ZIIkmRst8fcsQr7SH5Sa");
+var stripe = require("stripe")(process.env.STRIPE);
 
 //passport
 require('./config_copy/passport')(passport); // pass passport for configuration
@@ -199,7 +197,7 @@ app.post('/api/email/send', EmailCtrl.sendEmail);
 	
 
 
-app.listen(port, function(){
+app.listen(process.env.PORT||5000, function(){
 	console.log('listening on ' + port);
 });
 

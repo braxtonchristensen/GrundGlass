@@ -1,9 +1,9 @@
 var EmailCtrl = require('../controllers/EmailCtrl.js'),
 	Order = require('../models/OrderModel.js');
 
-var stripe = require("stripe")("sk_test_RPm6ZIIkmRst8fcsQr7SH5Sa");
+var stripe = require("stripe")(process.env.STRIPE);
 module.exports.submitStripe = function(req, res){
-	console.log(11111, req.body)
+	console.log(11111, req.body);
 	req.session.cart = [];
 	var stripeToken = req.body.stripeToken;
 	Order.findById(req.params.orderId)
@@ -25,17 +25,17 @@ module.exports.submitStripe = function(req, res){
 				  	order.payment.confirmation = data.id;
 				  	order.save(function(err, saveData){
 				  		if(err){
-				  			res.send(err)
+				  			res.send(err);
 				  		} else {
-				  			console.log(5555, saveData)
+				  			console.log(5555, saveData);
 						  	EmailCtrl.sendReceipt(saveData);
 						  	EmailCtrl.sendOrder(saveData);
 						  	res.redirect('/#/confirmation/' + order._id)//change this ro confirmation page
 						  	// res.send(saveData);
 				  		}
-			  		})
+			  		});
 				 }
 			});
 		}
-	})
+	});
 };
