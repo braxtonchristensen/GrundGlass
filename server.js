@@ -5,7 +5,6 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	session = require('express-session'),
 	dotenv = require('dotenv').load();
-	port = process.env.PORT,
 	passport = require('passport'),
 	flash = require('connect-flash'),
 	morgan = require('morgan'),
@@ -197,7 +196,7 @@ app.post('/api/email/send', EmailCtrl.sendEmail);
 
 
 app.listen(process.env.PORT||5000, function(){
-	console.log('listening on ' + port);
+	console.log('listening on ' + process.env.PORT);
 });
 
 function isLoggedIn(req, res, next) {
