@@ -32,8 +32,8 @@ module.exports = {
 				"from_email":"hello@grundeglass.com",
 				"from_name":"Your Friendly Reminder Service",
 				"to":[{
-					"email": 'braxton.christensen@gmail.com',
-					"name": 'Braxton',
+					"email": 'b_grundeland@yahoo.com',
+					"name": 'Brent',
 					"type":"to"
 			}]
 		};

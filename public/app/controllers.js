@@ -5,7 +5,7 @@ var app = angular.module('ecommerce');
 app.controller('adminCtrl', function($scope, adminService, customerService, cartService, products, photos, fileReader){
 	
 	$scope.createAdmin = function(){
-		customerService.addCustomer('Braxton Christensen', 'braxton.christensen@gmail.com', 'test').then(function(response){
+		customerService.addCustomer('Brent Grundeland', 'b_grundeland@Yahoo.com', 'test').then(function(response){
 			console.log('user created');
 		});
 
@@ -442,7 +442,7 @@ app.controller('excursionCtrl', function($scope, $location, cart, cartService, a
 app.controller('shopCtrl', function($scope, $location, productService, cartService, cart, customerService, products, photos){
 
 	$scope.createAdmin = function(){
-		customerService.addCustomer('Brent Grundeland', 'braxton.christensen@gmail.com', 'test').then(function(response){
+		customerService.addCustomer('Brent Grundeland', 'b_grundeland@Yahoo.com', 'test').then(function(response){
 			Materialize.toast('user created', 1000);
 		});
 
